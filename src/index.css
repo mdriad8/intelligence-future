@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary-100 dark:bg-secondary-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-400 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500;
+  }
+}
+
+@layer components {
+  /* Glassmorphism effect */
+  .glass {
+    @apply backdrop-blur-xl bg-white/10 border border-white/20 shadow-glass;
+  }
+
+  .dark .glass {
+    @apply backdrop-blur-xl bg-secondary-900/30 border border-white/10 shadow-glass-dark;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-lg bg-white/80 dark:bg-secondary-900/80 border border-white/20 dark:border-secondary-700/50 shadow-xl rounded-2xl;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-500 via-accent-cyan to-accent-teal bg-clip-text text-transparent;
+  }
+
+  .gradient-text-hover {
+    @apply bg-gradient-to-r from-primary-400 via-accent-cyan to-accent-teal bg-clip-text text-transparent;
+  }
+
+  /* Neon glow effect */
+  .neon-border {
+    @apply border border-primary-500/50 shadow-neon;
+  }
+
+  .neon-border-cyan {
+    @apply border border-accent-cyan/50 shadow-neon-cyan;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-accent-cyan text-white font-semibold rounded-xl shadow-lg shadow-primary-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/40 hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-white dark:bg-secondary-800 border-2 border-primary-500 text-primary-600 dark:text-primary-400 font-semibold rounded-xl hover:bg-primary-50 dark:hover:bg-secondary-700 transition-all duration-300;
+  }
+
+  .btn-glass {
+    @apply inline-flex items-center justify-center px-6 py-3 glass text-primary-600 dark:text-white font-semibold rounded-xl hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-300;
+  }
+
+  /* Section container */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white dark:bg-secondary-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-secondary-100 dark:border-secondary-700;
+  }
+
+  .card-hover {
+    @apply hover:-translate-y-2 hover:shadow-2xl;
+  }
+
+  /* Input styles */
+  .input-primary {
+    @apply w-full px-4 py-3 bg-white dark:bg-secondary-800 border border-secondary-200 dark:border-secondary-700 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all duration-200 text-secondary-900 dark:text-white placeholder-secondary-400;
+  }
+
+  .input-glass {
+    @apply w-full px-4 py-3 glass rounded-xl focus:ring-2 focus:ring-primary-500 outline-none transition-all duration-200 text-secondary-900 dark:text-white placeholder-secondary-400;
+  }
+}
+
+@layer utilities {
+  /* Animated gradient background */
+  .animate-gradient-bg {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+
+  /* Text shadow for neon effect */
+  .text-shadow-neon {
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+
+  .text-shadow-neon-cyan {
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.5), 0 0 20px rgba(6, 182, 212, 0.3);
+  }
+
+  /* Mobile touch-friendly sizing */
+  .touch-target {
+    @apply min-h-12 min-w-12;
+  }
+
+  /* Safe area for mobile notches */
+  @supports (padding: max(0px)) {
+    .safe-area {
+      padding-left: max(1rem, env(safe-area-inset-left));
+      padding-right: max(1rem, env(safe-area-inset-right));
+    }
+  }
+}
