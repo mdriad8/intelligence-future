@@ -11,10 +11,10 @@ export interface TeamMember {
 export const team: TeamMember[] = [
   {
     id: '1',
-    name: 'Dr. James Mitchell',
+    name: 'Rumman Arefin',
     role: 'Founder & CEO',
-    bio: 'With over 20 years in international education, Dr. Mitchell founded Intelligence Future to provide AI-enhanced guidance for students worldwide.',
-    image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400',
+    bio: 'With over 10 years in international education, Arefin founded Intelligence Future to provide AI-enhanced guidance for students worldwide.',
+    image: 'https://cdn.theorg.com/c799729c-a72e-45e7-a9f9-3092f4606d94_medium.jpg',
     linkedin: '#',
     expertise: ['Strategic Leadership', 'Education Policy', 'International Relations'],
   },
